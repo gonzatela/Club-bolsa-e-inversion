@@ -1294,6 +1294,13 @@
     display: flex; align-items: center; justify-content: space-between;
   }
   .footer-bottom-text { font-size: 11px; color: var(--gray-300); }
+  .footer-bottom-links {
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+  }
+  .footer-bottom-links a {
+    font-size: 11px; color: var(--gray-300); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-bottom-links a:hover { color: var(--orange); }
 
   /* ── MODAL ── */
   .modal-overlay {
