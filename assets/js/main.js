@@ -388,5 +388,30 @@ document.querySelectorAll('.market-widget-card, .db-card, .recurso-card, .evento
   observer.observe(el);
 });
 
+// COOKIE CONSENT
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.innerHTML = `
+      <div class="cookie-text">
+        Utilizamos cookies para mejorar tu experiencia en nuestra web. Al continuar navegando, aceptas nuestra política.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn" id="acceptCookies">Aceptar</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+    
+    // Fade in banner after a slight delay
+    setTimeout(() => {
+      banner.classList.add('show');
+    }, 500);
 
-
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      banner.classList.remove('show');
+      setTimeout(() => banner.remove(), 400); // Wait for transition
+    });
+  }
+});
