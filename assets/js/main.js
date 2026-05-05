@@ -421,3 +421,54 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('denyCookies').addEventListener('click', () => closeBanner('denied'));
   }
 });
+
+// STATS COUNTER ANIMATION
+document.addEventListener("DOMContentLoaded", () => {
+  const statElements = document.querySelectorAll('.hero-stat-num');
+  
+  if (statElements.length > 0) {
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          
+          if (!el.hasAttribute('data-original-text')) {
+            el.setAttribute('data-original-text', el.innerText.trim());
+          }
+          
+          const text = el.getAttribute('data-original-text');
+          const isPlus = text.includes('+');
+          const target = parseInt(text.replace(/\D/g, ''), 10);
+          
+          if (!isNaN(target)) {
+            el.innerText = isPlus ? '+0' : '0';
+            
+            const duration = 2000; // ms
+            const start = performance.now();
+            
+            const animate = (timestamp) => {
+              const progress = Math.min((timestamp - start) / duration, 1);
+              const easeOutProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+              const current = Math.ceil(easeOutProgress * target);
+              
+              el.innerText = (isPlus ? '+' : '') + current;
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                el.innerText = text;
+              }
+            };
+            
+            requestAnimationFrame(animate);
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    statElements.forEach(el => {
+      statsObserver.observe(el);
+    });
+  }
+});
