@@ -390,15 +390,17 @@ document.querySelectorAll('.market-widget-card, .db-card, .recurso-card, .evento
 
 // COOKIE CONSENT
 document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem('cookiesAccepted')) {
+  if (!localStorage.getItem('cookieChoice')) {
     const banner = document.createElement('div');
     banner.className = 'cookie-banner';
     banner.innerHTML = `
       <div class="cookie-text">
-        Utilizamos cookies para mejorar tu experiencia en nuestra web. Al continuar navegando, aceptas nuestra política.
+        Utilizamos cookies para mejorar tu experiencia en nuestra web. Puedes aceptar todas las cookies, solo las necesarias, o denegarlas.
       </div>
       <div class="cookie-actions">
-        <button class="cookie-btn" id="acceptCookies">Aceptar</button>
+        <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">Aceptar todas</button>
+        <button class="cookie-btn cookie-btn-secondary" id="acceptNecessaryCookies">Solo necesarias</button>
+        <button class="cookie-btn cookie-btn-ghost" id="denyCookies">Denegar</button>
       </div>
     `;
     document.body.appendChild(banner);
@@ -408,10 +410,14 @@ document.addEventListener("DOMContentLoaded", () => {
       banner.classList.add('show');
     }, 500);
 
-    document.getElementById('acceptCookies').addEventListener('click', () => {
-      localStorage.setItem('cookiesAccepted', 'true');
+    const closeBanner = (choice) => {
+      localStorage.setItem('cookieChoice', choice);
       banner.classList.remove('show');
       setTimeout(() => banner.remove(), 400); // Wait for transition
-    });
+    };
+
+    document.getElementById('acceptAllCookies').addEventListener('click', () => closeBanner('all'));
+    document.getElementById('acceptNecessaryCookies').addEventListener('click', () => closeBanner('necessary'));
+    document.getElementById('denyCookies').addEventListener('click', () => closeBanner('denied'));
   }
 });
