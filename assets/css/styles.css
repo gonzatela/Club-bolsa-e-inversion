@@ -1197,13 +1197,14 @@
     background: var(--gray-50);
     box-shadow: var(--shadow-sm);
   }
-  .team-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    display: block;
-    background: var(--orange-pale);
-  }
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background: var(--orange-pale);
+}
   .team-card-body {
     padding: 1.35rem;
   }
