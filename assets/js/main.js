@@ -32,6 +32,36 @@ if (nav && navToggle) {
   });
 }
 
+// MOBILE UPCOMING EVENTS
+function updateMobileUpcomingEvents() {
+  const cards = Array.from(document.querySelectorAll('[data-upcoming-event][data-event-date]'));
+  if (!cards.length) return;
+
+  const isMobile = window.matchMedia('(max-width: 640px)').matches;
+  cards.forEach(card => {
+    card.classList.remove('mobile-event-hidden');
+    card.style.order = '';
+  });
+  if (!isMobile) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const upcoming = cards
+    .map(card => ({ card, date: new Date(`${card.dataset.eventDate}T00:00:00`) }))
+    .filter(item => !Number.isNaN(item.date.getTime()) && item.date >= today)
+    .sort((a, b) => a.date - b.date);
+
+  const visibleCards = new Set(upcoming.slice(0, 2).map(item => item.card));
+  cards.forEach(card => card.classList.toggle('mobile-event-hidden', !visibleCards.has(card)));
+  upcoming.slice(0, 2).forEach((item, index) => {
+    item.card.style.order = String(index + 1);
+  });
+}
+
+updateMobileUpcomingEvents();
+window.addEventListener('resize', updateMobileUpcomingEvents);
+
 // NEWSLETTER
 function subscribeNewsletter() {
   const email = document.getElementById('emailInput').value;

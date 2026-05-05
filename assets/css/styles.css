@@ -1723,13 +1723,11 @@
     .eventos-list > .evento-card {
       margin-bottom: 0;
     }
+    .eventos-list > .evento-card.mobile-event-hidden {
+      display: none;
+    }
     .eventos-recientes {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
+      display: none;
     }
     .eventos-section-title {
       grid-column: 1 / -1;
