@@ -26,6 +26,7 @@
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
+    <li><a href="#network">Network</a></li>
     <li><a href="#noticias">Noticias</a></li>
     <li><a href="#eventos">Eventos</a></li>
     <li><a href="#recursos">Recursos</a></li>
@@ -109,9 +110,9 @@
 </div>
 
 <!-- NETWORK -->
-<section id="network" style="padding: 2rem 2rem 0 2rem; background-color: #fff; border-bottom: 1px solid #eaeaea;">
+<section id="network" style="padding: 4rem 2rem 4rem 2rem; background-color: #fff; border-bottom: 1px solid #eaeaea;">
   <div class="section-tag">Network</div>
-  <h2 class="section-title">Network</h2>
+  <h2 class="section-title">Network y Alumni</h2>
   <p class="section-sub">Nuestra red de ponentes y expertos vienen de las mejores empresas.<br><span style="font-size: 0.9em; font-weight: 500; color: var(--orange); margin-top: 6px; display: inline-block;">👉 Haz clic en cualquier logo para ver sus posiciones abiertas y programas de talento.</span></p>
   
   <style>
@@ -173,12 +174,14 @@
     <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Finaipro" data-logo="assets/img/logos/finaipro.png" data-careers="https://www.finaipro.com/contact-us.html" data-scale="1" data-people='[{"name":"Lorenzo BALLESTER Barral", "role":"Chief Investment Officer", "linkedin":"https://www.linkedin.com/in/lorenzo-ballester-barral-1428b644/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/finaipro.png" alt="Finaipro" onerror="this.src='https://placehold.co/140x60/f8f9fa/333333?text=Finaipro'"></button>
     <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="LIFT Asset Management" data-logo="assets/img/logos/lift.png" data-careers="https://lift-am.com/en/contact/" data-scale="1" data-invert="true" data-people='[{"name":"Javier Cortés", "role":"Investment Director | Private Equity", "linkedin":"https://www.linkedin.com/in/javier-cort%C3%A9s-caia-a6bb0632/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/lift.png" alt="LIFT Asset Management" style="filter: invert(1);" onerror="this.src='https://placehold.co/140x60/f8f9fa/333333?text=LIFT+Asset+Management'; this.style.filter='none';"></button>
   </div>
-</section>
 
-<!-- TESTIMONIOS -->
-<section id="testimonios" class="testimonials-section">
-  <div class="section-tag">Testimonios</div>
-  <h2 class="section-title">Alumni del club en la industria</h2>
+  <!-- Alumni subsection (within Network) -->
+  <div id="testimonios" style="max-width: 1200px; margin: 2.5rem auto 0; padding: 0 1rem;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+      <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); font-weight: 500;">Alumni en la industria</span>
+      <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+    </div>
   <p class="section-sub">Ex-miembros del club han dado el salto a firmas de referencia en investment banking, mercados y banca corporativa.</p>
 
   <div class="testimonials-grid">
@@ -203,6 +206,7 @@
       <p class="testimonial-role">Corporate Banking Analyst</p>
       <blockquote>"La red de alumni y eventos del club me acercó a perfiles reales de la industria antes de decidir mi camino profesional."</blockquote>
     </article>
+    </div>
   </div>
 </section>
 
