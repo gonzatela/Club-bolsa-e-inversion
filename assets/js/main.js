@@ -208,6 +208,14 @@ const exploreItems = [
   {
     type: 'recurso',
     label: 'Recurso',
+    title: 'Street of Walls',
+    desc: 'Cursos gratuitos de investment banking, valuation, DCF, comps, precedent transactions, LBO y M&A.',
+    meta: 'Investment Banking',
+    href: 'https://www.streetofwalls.com/finance-training-courses/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
     title: 'Investopedia',
     desc: 'Diccionario financiero y guías sobre instrumentos, estrategias y conceptos del mercado.',
     meta: 'Referencia',
