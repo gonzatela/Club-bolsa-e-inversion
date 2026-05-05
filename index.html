@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club de Bolsa e Inversión | CUNEF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img class="brand-logo" src="assets/img/cunef-universidad-logo.png" alt="CUNEF Universidad">
+    <div class="nav-divider"></div>
+    <span class="nav-club-name">Club de Bolsa e Inversión</span>
+  </a>
+  <button class="nav-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#noticias">Noticias</a></li>
+    <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="explorar.html" class="nav-cta">Explorar</a></li>
+  </ul>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        { "description": "IBEX 35", "proName": "BME:IBC" },
+        { "description": "S&P 500", "proName": "FOREXCOM:SPXUSD" },
+        { "description": "NASDAQ 100", "proName": "FOREXCOM:NSXUSD" },
+        { "description": "Euro Stoxx 50", "proName": "OANDA:EU50EUR" },
+        { "description": "EUR/USD", "proName": "FX_IDC:EURUSD" },
+        { "description": "Oro", "proName": "OANDA:XAUUSD" },
+        { "description": "Brent", "proName": "TVC:UKOIL" },
+        { "description": "Bitcoin", "proName": "BITSTAMP:BTCUSD" },
+        { "description": "DAX", "proName": "XETR:DAX" },
+        { "description": "Bono España 10Y", "proName": "EUREX:FBTS1!" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "light",
+      "isTransparent": true,
+      "displayMode": "regular",
+      "locale": "es"
+    }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-tag">CUNEF Universidad</div>
+      <h1 class="hero-title">Club de Bolsa e <em>Inversión</em></h1>
+      <p class="hero-desc">Tu punto de acceso a los mercados financieros. Datos, bases de datos profesionales, eventos y formación para estudiantes de CUNEF.</p>
+      <div class="hero-actions">
+        <a href="#recursos" class="btn-primary">Ver recursos</a>
+        <a href="explorar.html" class="btn-secondary">Explorar contenidos →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Bases de datos premium</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">+20</div>
+          <div class="hero-stat-label">Eventos al año</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Semanal</div>
+          <div class="hero-stat-label">Newsletter de mercados</div>
+        </div>
+      </div>
+    </div>
+    <a href="#eventos" class="hero-event-card">
+      <img src="assets/img/image-01-e87cb72ed2.png" alt="Próximo evento del Club de Bolsa e Inversión">
+      <div class="hero-event-overlay">
+        <div class="hero-event-kicker">Siguiente evento · 15 May</div>
+        <h2>Renta fija en el nuevo ciclo de tipos</h2>
+        <p>Estrategias y oportunidades para posicionar una cartera de bonos en el entorno macro actual.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- NETWORK -->
+<section id="network" style="padding: 2rem 2rem 0 2rem; background-color: #fff; border-bottom: 1px solid #eaeaea;">
+  <div class="section-tag">Network</div>
+  <h2 class="section-title">Network</h2>
+  <p class="section-sub">Nuestra red de ponentes y expertos vienen de las mejores empresas.<br><span style="font-size: 0.9em; font-weight: 500; color: var(--orange); margin-top: 6px; display: inline-block;">👉 Haz clic en cualquier logo para ver sus posiciones abiertas y programas de talento.</span></p>
+  
+  <style>
+    .network-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem 3rem;
+      padding: 3rem 1rem 1rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .network-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px; /* Fixed width for uniform grid cell */
+      height: 60px; /* Fixed height for uniform alignment */
+      transition: transform 0.3s ease;
+    }
+    .network-logo-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(70%);
+      transition: all 0.3s ease;
+    }
+    .network-logo-wrapper:hover {
+      transform: translateY(-5px);
+    }
+    .network-logo-wrapper:hover img {
+      filter: grayscale(0%) opacity(100%);
+    }
+    @media (max-width: 768px) {
+      .network-grid {
+        gap: 2rem;
+      }
+      .network-logo-wrapper {
+        width: 110px;
+        height: 50px;
+      }
+    }
+  </style>
+
+  <div class="network-grid">
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="JP Morgan" data-logo="assets/img/logos/J-P-_Morgan_Logo_0.svg" data-careers="https://careers.jpmorgan.com/global/en/students/programs" data-scale="1" data-people='[{"name":"Alejandro Ortiz Cabrero", "role":"Investment Banking Analyst - Alumni CUNEF", "linkedin":"https://www.linkedin.com/in/alejandro-ortiz-cabrero/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/J-P-_Morgan_Logo_0.svg" alt="JP Morgan"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Citi" data-logo="assets/img/logos/Citi_idkUhwKWva_0.svg" data-careers="https://jobs.citi.com/students-and-graduates" data-scale="1" data-people='[]' onclick="openNetworkModal(this)"><img src="assets/img/logos/Citi_idkUhwKWva_0.svg" alt="Citi"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="UBS" data-logo="assets/img/logos/UBS_idDuG1jJQ7_0.svg" data-careers="https://www.ubs.com/global/en/careers.html" data-scale="1.1" data-people='[{"name":"Fernando Jover Castiella", "role":"Head of Alternative Investments", "linkedin":"https://www.linkedin.com/in/fernando-jover-castiella-1258b51/"}, {"name":"Jaime Hernández Tallada", "role":"Executive Director, Client Advisor", "linkedin":"https://www.linkedin.com/in/jaime-hern%C3%A1ndez-tallada-37787547/"}, {"name":"Nina Petrini", "role":"Country Head Spain", "linkedin":"https://www.linkedin.com/in/nina-petrini-52894222/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/UBS_idDuG1jJQ7_0.svg" alt="UBS" style="transform: scale(1.1);"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Deutsche Bank" data-logo="assets/img/logos/deutsche-bank-1.svg" data-careers="https://careers.db.com/students-graduates/" data-scale="1.15" data-people='[{"name":"Luis Armada", "role":"Managing Director - Corporate Finance", "linkedin":"https://www.linkedin.com/in/luis-armada-6a252/"}, {"name":"Puy Carazo, CAIA", "role":"Director, Wealth Management Spain", "linkedin":"https://www.linkedin.com/in/puy-carazo-caia-9a993616/"}, {"name":"Gracia Campos Pardo", "role":"Advisory", "linkedin":"https://www.linkedin.com/in/gracia-campos-pardo-b0767319/"}, {"name":"Carles Masias Ramírez", "role":"Analyst", "linkedin":"https://www.linkedin.com/in/carles-masias/"}, {"name":"Esther Diaz Delgado", "role":"Structured Products Manager", "linkedin":"https://www.linkedin.com/in/esther-diaz-delgado-a1b33a11/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/deutsche-bank-1.svg" alt="Deutsche Bank" style="transform: scale(1.15);"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Rothschild & Co" data-logo="assets/img/logos/Rothschild___Co_id6xhJAcRY_0.svg" data-careers="https://www.rothschildandco.com/en/careers/students-and-graduates/" data-scale="1" data-people='[{"name":"Ane Zabala", "role":"Director", "linkedin":"https://www.linkedin.com/in/ane-zabala-b945305b/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/Rothschild___Co_id6xhJAcRY_0.svg" alt="Rothschild & Co"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Jefferies" data-logo="assets/img/logos/Jefferies_Financial_Group_idGeHjIkMe_0.svg" data-careers="https://www.jefferies.com/careers/" data-scale="1" data-people='[{"name":"Guillermo García Paramés", "role":"Investment Banking | Associate - Alumni CUNEF", "linkedin":"https://www.linkedin.com/in/guillermo-garc%C3%ADa-param%C3%A9s-8a3a58178/"}, {"name":"Alvaro Faustino Gonzalez", "role":"Vicepresidente - Alumni CUNEF", "linkedin":"https://www.linkedin.com/in/alvaro-faustino-gonzalez-0b582798/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/Jefferies_Financial_Group_idGeHjIkMe_0.svg" alt="Jefferies"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Nomura" data-logo="assets/img/logos/nomura-1.svg" data-careers="https://www.nomura.com/careers/" data-scale="1.8" data-people='[{"name":"Fco. Javier Martin Almohalla", "role":"M&A Executive Director", "linkedin":"https://www.linkedin.com/in/fco-javier-martin-almohalla-71537b138/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/nomura-1.svg" alt="Nomura" style="transform: scale(1.8);"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="BBVA" data-logo="assets/img/logos/bbva-2.svg" data-careers="https://careers.bbva.com/espana/es/" data-scale="1.1" data-people='[{"name":"Alexandra Azorí, MFIA", "role":"Estrategia y Desarrollo de Negocio", "linkedin":"https://www.linkedin.com/in/alexandraazori/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/bbva-2.svg" alt="BBVA" style="transform: scale(1.1);"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="CaixaBank" data-logo="assets/img/logos/caixabank-logo.svg" data-careers="https://caixabankcareers.com/?locale=es_ES" data-scale="1.2" data-people='[{"name":"Monica Perez Lopez", "role":"Portfolio Manager - Alumni CUNEF", "linkedin":"https://www.linkedin.com/in/monicaperezlopez/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/caixabank-logo.svg" alt="CaixaBank" style="transform: scale(1.2);"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="BME" data-logo="assets/img/logos/Bolsas_y_Mercados_idrb0irUa6_1.svg" data-careers="https://www.bolsasymercados.es/en/about-bme/work/open-positions.html" data-scale="1" data-people='[{"name":"José Antonio Pérez Rodríguez, Ph. D.", "role":"Responsable de Formación", "linkedin":"https://www.linkedin.com/in/jos%C3%A9-antonio-p%C3%A9rez-rodr%C3%ADguez-ph-d-238403177/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/Bolsas_y_Mercados_idrb0irUa6_1.svg" alt="BME"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="XTB" data-logo="assets/img/logos/idT4ou7TQy_1777918767596.png" data-careers="https://www.xtb.com/es/talento" data-scale="1" data-people='[{"name":"Manuel Pinto Aguirre, CFA", "role":"Head of Financial Market Analysis", "linkedin":"https://www.linkedin.com/in/manuel-pinto-aguirre-cfa-58252a41/"}, {"name":"Pablo Alcalde Tremiño", "role":"Senior Account Manager - Alumni CUNEF", "linkedin":"https://www.linkedin.com/in/pablo-alcalde-tremi%C3%B1o-815912bb/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/idT4ou7TQy_1777918767596.png" alt="XTB"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Women in Banking" data-logo="assets/img/logos/wib.png" data-careers="https://womeninbankingspain.com/unete/" data-scale="1.6" data-people='[{"name":"Ane Zabala", "role":"Rothschild & Co", "linkedin":"https://www.linkedin.com/in/ane-zabala-b945305b/"}, {"name":"Puy Carazo, CAIA", "role":"Deutsche Bank", "linkedin":"https://www.linkedin.com/in/puy-carazo-caia-9a993616/"}, {"name":"Gracia Campos Pardo", "role":"Deutsche Bank", "linkedin":"https://www.linkedin.com/in/gracia-campos-pardo-b0767319/"}, {"name":"Esther Diaz Delgado", "role":"Deutsche Bank", "linkedin":"https://www.linkedin.com/in/esther-diaz-delgado-a1b33a11/"}, {"name":"Alexandra Azorí, MFIA", "role":"BBVA", "linkedin":"https://www.linkedin.com/in/alexandraazori/"}, {"name":"Nina Petrini", "role":"UBS Asset Management", "linkedin":"https://www.linkedin.com/in/nina-petrini-52894222/"}, {"name":"Monica Perez Lopez", "role":"CaixaBank", "linkedin":"https://www.linkedin.com/in/monicaperezlopez/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/wib.png" alt="Women in Banking" style="transform: scale(1.6);" onerror="this.src='https://placehold.co/140x60/f8f9fa/333333?text=Women+In+Banking'"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="Finaipro" data-logo="assets/img/logos/finaipro.png" data-careers="https://www.finaipro.com/contact-us.html" data-scale="1" data-people='[{"name":"Lorenzo BALLESTER Barral", "role":"Chief Investment Officer", "linkedin":"https://www.linkedin.com/in/lorenzo-ballester-barral-1428b644/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/finaipro.png" alt="Finaipro" onerror="this.src='https://placehold.co/140x60/f8f9fa/333333?text=Finaipro'"></button>
+    <button type="button" class="network-logo-wrapper" style="background:none;border:none;cursor:pointer;padding:0;" data-company="LIFT Asset Management" data-logo="assets/img/logos/lift.png" data-careers="https://lift-am.com/en/contact/" data-scale="1" data-invert="true" data-people='[{"name":"Javier Cortés", "role":"Investment Director | Private Equity", "linkedin":"https://www.linkedin.com/in/javier-cort%C3%A9s-caia-a6bb0632/"}]' onclick="openNetworkModal(this)"><img src="assets/img/logos/lift.png" alt="LIFT Asset Management" style="filter: invert(1);" onerror="this.src='https://placehold.co/140x60/f8f9fa/333333?text=LIFT+Asset+Management'; this.style.filter='none';"></button>
+  </div>
+</section>
+
+<!-- MERCADO -->
+<section id="mercado">
+  <div class="section-tag">Datos de mercado</div>
+  <h2 class="section-title">Mercados en tiempo real</h2>
+  <p class="section-sub">Los índices y activos más seguidos. Datos orientativos actualizados a través de fuentes abiertas.</p>
+
+  <div class="market-widgets">
+    <div class="market-widget-card">
+      <div class="market-widget-header">
+        <h3>Acciones destacadas hoy</h3>
+        <p>Movimientos relevantes del mercado estadounidense.</p>
+      </div>
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container market-widget">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+        {
+          "exchange": "US",
+          "colorTheme": "light",
+          "dateRange": "12M",
+          "showChart": true,
+          "locale": "es",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "showSymbolLogo": false,
+          "showFloatingTooltip": false,
+          "plotLineColorGrowing": "rgba(232, 90, 26, 1)",
+          "plotLineColorFalling": "rgba(232, 90, 26, 1)",
+          "gridLineColor": "rgba(240, 243, 250, 0)",
+          "scaleFontColor": "#0F0F0F",
+          "belowLineFillColorGrowing": "rgba(232, 90, 26, 0.12)",
+          "belowLineFillColorFalling": "rgba(232, 90, 26, 0.12)",
+          "belowLineFillColorGrowingBottom": "rgba(232, 90, 26, 0)",
+          "belowLineFillColorFallingBottom": "rgba(232, 90, 26, 0)",
+          "symbolActiveColor": "rgba(232, 90, 26, 0.12)",
+          "width": "100%",
+          "height": "100%"
+        }
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+    </div>
+
+    <div class="market-widget-card">
+      <div class="market-widget-header">
+        <h3>Visión global de mercados</h3>
+        <p>Índices, futuros, bonos y divisas en una vista comparativa.</p>
+      </div>
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container market-widget">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
+          "colorTheme": "light",
+          "dateRange": "12M",
+          "locale": "es",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "showFloatingTooltip": false,
+          "plotLineColorGrowing": "rgba(232, 90, 26, 1)",
+          "plotLineColorFalling": "rgba(232, 90, 26, 1)",
+          "gridLineColor": "rgba(240, 243, 250, 0)",
+          "scaleFontColor": "#0F0F0F",
+          "belowLineFillColorGrowing": "rgba(232, 90, 26, 0.12)",
+          "belowLineFillColorFalling": "rgba(232, 90, 26, 0.12)",
+          "belowLineFillColorGrowingBottom": "rgba(232, 90, 26, 0)",
+          "belowLineFillColorFallingBottom": "rgba(232, 90, 26, 0)",
+          "symbolActiveColor": "rgba(232, 90, 26, 0.12)",
+          "tabs": [
+            {
+              "title": "Índices",
+              "symbols": [
+                { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
+                { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
+                { "s": "FOREXCOM:DJI", "d": "Dow Jones" },
+                { "s": "INDEX:NKY", "d": "Japan 225" },
+                { "s": "INDEX:DEU40", "d": "DAX" },
+                { "s": "FOREXCOM:UKXGBP", "d": "FTSE 100" }
+              ],
+              "originalTitle": "Indices"
+            },
+            {
+              "title": "Futuros",
+              "symbols": [
+                { "s": "BMFBOVESPA:ISP1!", "d": "S&P 500" },
+                { "s": "BMFBOVESPA:EUR1!", "d": "Euro" },
+                { "s": "CMCMARKETS:GOLD", "d": "Oro" },
+                { "s": "PYTH:WTI3!", "d": "WTI Crude Oil" },
+                { "s": "BMFBOVESPA:CCM1!", "d": "Corn" }
+              ],
+              "originalTitle": "Futures"
+            },
+            {
+              "title": "Bonos",
+              "symbols": [
+                { "s": "EUREX:FGBL1!", "d": "Euro Bund" },
+                { "s": "EUREX:FBTP1!", "d": "Euro BTP" },
+                { "s": "EUREX:FGBM1!", "d": "Euro BOBL" }
+              ],
+              "originalTitle": "Bonds"
+            },
+            {
+              "title": "Forex",
+              "symbols": [
+                { "s": "FX:EURUSD", "d": "EUR/USD" },
+                { "s": "FX:GBPUSD", "d": "GBP/USD" },
+                { "s": "FX:USDJPY", "d": "USD/JPY" },
+                { "s": "FX:USDCHF", "d": "USD/CHF" },
+                { "s": "FX:AUDUSD", "d": "AUD/USD" },
+                { "s": "FX:USDCAD", "d": "USD/CAD" }
+              ],
+              "originalTitle": "Forex"
+            }
+          ],
+          "support_host": "https://www.tradingview.com",
+          "width": "100%",
+          "height": "100%",
+          "showSymbolLogo": true,
+          "showChart": true
+        }
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+    </div>
+  </div>
+
+
+</section>
+
+<!-- NOTICIAS -->
+<section id="noticias">
+  <div class="section-tag">Noticias</div>
+  <h2 class="section-title">Últimas noticias de mercados</h2>
+  <p class="section-sub">Titulares y movimientos relevantes para seguir el pulso del mercado antes de clase, eventos o sesiones del club.</p>
+
+  <div class="news-widget-wrap">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container news-widget">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+      {
+        "displayMode": "regular",
+        "feedMode": "all_symbols",
+        "colorTheme": "light",
+        "isTransparent": true,
+        "locale": "es",
+        "width": "100%",
+        "height": "100%"
+      }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+</section>
+<!-- EVENTOS -->
+<section id="eventos">
+  <div class="section-tag">Agenda</div>
+  <h2 class="section-title">Próximos eventos</h2>
+  <p class="section-sub">Charlas, workshops, visitas y competiciones organizadas por el club.</p>
+
+  <div class="eventos-layout">
+    <div class="eventos-list">
+
+      <div class="evento-card">
+        <div class="evento-date">
+          <div class="evento-day">15</div>
+          <div class="evento-month">May</div>
+        </div>
+        <div class="evento-info">
+          <span class="evento-tag">Charla</span>
+          <div class="evento-title">Renta fija en el nuevo ciclo de tipos: estrategias y oportunidades</div>
+          <div class="evento-desc">Un gestor de renta fija de una firma de asset management explicará cómo posicionar una cartera de bonos en el actual entorno macroeconómico.</div>
+          <div class="evento-meta">
+            <span>📍 Aula Magna, CUNEF</span>
+            <span>🕖 18:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-card">
+        <div class="evento-date">
+          <div class="evento-day">22</div>
+          <div class="evento-month">May</div>
+        </div>
+        <div class="evento-info">
+          <span class="evento-tag">Workshop</span>
+          <div class="evento-title">Construcción de un LBO model en Excel desde cero</div>
+          <div class="evento-desc">Workshop práctico donde aprenderemos a construir un modelo de LBO completo usando datos reales extraídos de Capital IQ.</div>
+          <div class="evento-meta">
+            <span>📍 Sala 2.01, CUNEF</span>
+            <span>🕕 17:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-card">
+        <div class="evento-date">
+          <div class="evento-day">05</div>
+          <div class="evento-month">Jun</div>
+        </div>
+        <div class="evento-info">
+          <span class="evento-tag">Competición</span>
+          <div class="evento-title">Stock Pitch Competition — Edición Primavera 2025</div>
+          <div class="evento-desc">Presenta tu idea de inversión ante un jurado de profesionales. Equipos de 2-3 personas. Inscripción abierta hasta el 30 de mayo.</div>
+          <div class="evento-meta">
+            <span>📍 Aula Magna, CUNEF</span>
+            <span>🕔 16:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-card">
+        <div class="evento-date">
+          <div class="evento-day">18</div>
+          <div class="evento-month">Jun</div>
+        </div>
+        <div class="evento-info">
+          <span class="evento-tag">Visita</span>
+          <div class="evento-title">Visita a la sala de mercados de Santander Corporate &amp; Investment Banking</div>
+          <div class="evento-desc">Visita guiada a la sala de mercados de Santander CIB en Madrid. Aforo limitado — plazas por orden de inscripción.</div>
+          <div class="evento-meta">
+            <span>📍 Santander CIB, Madrid</span>
+            <span>🕙 10:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="eventos-recientes">
+        <h3 class="eventos-section-title">Eventos recientes</h3>
+        <div class="evento-card" onclick="openModal('modal7')">
+          <div class="evento-date">
+            <div class="evento-day">15</div>
+            <div class="evento-month">Abr</div>
+          </div>
+          <div class="evento-info">
+            <span class="evento-tag">Evento</span>
+            <div class="evento-title">I CUNEF Universidad Finance Superday</div>
+            <div class="evento-desc">Paneles de investment banking, asset management y alternativos con firmas globales, más networking con profesionales.</div>
+            <div class="evento-meta">
+              <span>Aula Magna, CUNEF</span>
+              <span>Abril 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="evento-card" onclick="openModal('modal8')">
+          <div class="evento-date">
+            <div class="evento-day">UBS</div>
+            <div class="evento-month">2026</div>
+          </div>
+          <div class="evento-info">
+            <span class="evento-tag">Charla</span>
+            <div class="evento-title">Wealth Management con UBS Madrid</div>
+            <div class="evento-desc">Pablo Carrasco y Jaime Hernández Tallada presentaron el modelo de gestión patrimonial y las salidas profesionales del área.</div>
+            <div class="evento-meta">
+              <span>CUNEF Universidad</span>
+              <span>UBS Madrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CALENDAR SIDEBAR -->
+    <div class="calendar-sidebar">
+      <div class="calendar-title">No te pierdas ningún evento</div>
+      <div class="calendar-desc">Añade el calendario del club a Google Calendar y recibe recordatorios de todos los eventos con antelación.</div>
+      <a href="https://calendar.google.com/calendar/u/0?cid=MTFmMDY5YjA2OGY3MjJmMTMxN2ZkZDFhMzZmNzI1MTlhZDZhMjYxM2Y4YWZhMTdlNzA2YTdhMGFmMjFlNDE3NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" class="calendar-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        Añadir a Google Calendar
+      </a>
+      <div class="calendar-note">Compatible con iCal, Outlook y otros calendarios</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <img src="assets/img/image-01-e87cb72ed2.png" alt="Finance Superday — Networking Rothschild & Co">
+  <div class="photo-strip-caption">
+    <span>Networking</span>
+    <p>Finance Superday · Rothschild & Co · Campus Almansa, abril 2026</p>
+  </div>
+</div>
+
+<!-- BIBLIOTECA -->
+<section id="biblioteca">
+  <div class="section-tag">Acceso exclusivo CUNEF</div>
+  <h2 class="section-title">Bases de datos profesionales</h2>
+  <p class="section-sub">Como estudiante de CUNEF tienes acceso gratuito a las herramientas que usan los profesionales en banca de inversión y research.</p>
+
+  <div class="db-grid">
+    <a href="https://encuentra.cunef.edu/discovery/fulldisplay?context=L&vid=34CUNEF_INST:VU1&search_scope=MyInstitution&tab=LibraryCatalog&docid=alma991000191979708131" target="_blank" class="db-card featured">
+      <div class="db-badge">⭐ Principal</div>
+      <div class="db-card-name">Bloomberg Terminal</div>
+      <div class="db-card-desc">La plataforma de referencia global en datos financieros, análisis de mercados, fixed income, renta variable, derivados y economía macro. Imprescindible en cualquier carrera financiera.</div>
+      <div class="db-card-tags">
+        <span class="db-tag">Renta variable</span>
+        <span class="db-tag">Fixed income</span>
+        <span class="db-tag">Macro</span>
+        <span class="db-tag">M&A</span>
+      </div>
+      <div class="db-card-footer">
+        <span class="db-access">Acceder vía Biblioteca CUNEF →</span>
+        <span class="db-arrow">↗</span>
+      </div>
+    </a>
+
+    <a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000208929708131" target="_blank" class="db-card featured">
+      <div class="db-badge">⭐ Principal</div>
+      <div class="db-card-name">Capital IQ</div>
+      <div class="db-card-desc">Plataforma de S&P Global con datos de empresas, transacciones de M&A, financiación y análisis de crédito. Muy usada en private equity y banca de inversión.</div>
+      <div class="db-card-tags">
+        <span class="db-tag">Private Equity</span>
+        <span class="db-tag">M&A</span>
+        <span class="db-tag">Crédito</span>
+        <span class="db-tag">Comps</span>
+      </div>
+      <div class="db-card-footer">
+        <span class="db-access">Acceder vía Biblioteca CUNEF →</span>
+        <span class="db-arrow">↗</span>
+      </div>
+    </a>
+
+    <a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000542709608131" target="_blank" class="db-card">
+      <div class="db-badge secondary">Disponible</div>
+      <div class="db-card-name">LSEG (Refinitiv)</div>
+      <div class="db-card-desc">London Stock Exchange Group ofrece datos de mercados globales, análisis de derivados y herramientas de trading profesional.</div>
+      <div class="db-card-tags">
+        <span class="db-tag">Derivados</span>
+        <span class="db-tag">Trading</span>
+        <span class="db-tag">Data</span>
+      </div>
+      <div class="db-card-footer">
+        <span class="db-access">Acceder vía Biblioteca CUNEF →</span>
+        <span class="db-arrow">↗</span>
+      </div>
+    </a>
+
+    <a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000558773908131" target="_blank" class="db-card">
+      <div class="db-badge secondary">Disponible</div>
+      <div class="db-card-name">LSEG IBES Guidance</div>
+      <div class="db-card-desc">Base de datos de estimaciones de analistas y guidance de empresas. Fundamental para análisis de renta variable y modelos de valoración.</div>
+      <div class="db-card-tags">
+        <span class="db-tag">Estimaciones</span>
+        <span class="db-tag">Equity Research</span>
+        <span class="db-tag">Guidance</span>
+      </div>
+      <div class="db-card-footer">
+        <span class="db-access">Acceder vía Biblioteca CUNEF →</span>
+        <span class="db-arrow">↗</span>
+      </div>
+    </a>
+
+    <a href="https://login.cunef.idm.oclc.org/login?url=https://sabi.informa.es/ip" target="_blank" class="db-card">
+      <div class="db-badge secondary">Disponible</div>
+      <div class="db-card-name">SABI</div>
+      <div class="db-card-desc">Base de datos de información financiera de empresas españolas y portuguesas. Cuentas anuales, balances y datos sectoriales de más de 2,5 millones de compañías.</div>
+      <div class="db-card-tags">
+        <span class="db-tag">España</span>
+        <span class="db-tag">Portugal</span>
+        <span class="db-tag">PYMES</span>
+        <span class="db-tag">Sectoriales</span>
+      </div>
+      <div class="db-card-footer">
+        <span class="db-access">Acceder vía CUNEF SSO →</span>
+        <span class="db-arrow">↗</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- RECURSOS -->
+<section id="recursos">
+  <div class="section-tag">Formación</div>
+  <h2 class="section-title">Recursos técnicos gratuitos</h2>
+  <p class="section-sub">Webs seleccionadas para aprender financial modeling, valuation y los procesos del sector financiero.</p>
+
+  <div class="recursos-grid">
+    <a href="https://www.wallstreetprep.com/free-resources/" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Modeling &amp; Valuation</div>
+      <div class="recurso-name">Wall Street Prep</div>
+      <div class="recurso-desc">Tutoriales gratuitos sobre financial modeling, valuation y Excel usados en banca de inversión.</div>
+    </a>
+    <a href="https://corporatefinanceinstitute.com/resources/" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Finanzas Corporativas</div>
+      <div class="recurso-name">CFI — Free Guides</div>
+      <div class="recurso-desc">Guías prácticas y plantillas sobre contabilidad, finanzas corporativas y análisis financiero.</div>
+    </a>
+    <a href="https://mergersandinquisitions.com/articles/" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Carreras &amp; Procesos</div>
+      <div class="recurso-name">Mergers & Inquisitions</div>
+      <div class="recurso-desc">Guías detalladas sobre procesos de selección en banca de inversión, private equity y hedge funds.</div>
+    </a>
+    <a href="https://breakingintowallstreet.com/resources/" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Banca de Inversión</div>
+      <div class="recurso-name">Breaking Into Wall Street</div>
+      <div class="recurso-desc">Recursos gratuitos de modeling, LBO y análisis. Casos prácticos y plantillas de Excel.</div>
+    </a>
+    <a href="https://aswathdamodaran.blogspot.com/" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Valoración Académica</div>
+      <div class="recurso-name">Damodaran Online</div>
+      <div class="recurso-desc">Damodaran comparte datasets, plantillas y materiales de valoración de Stern NYU. Referencia académica.</div>
+    </a>
+    <a href="https://www.investopedia.com/financial-term-dictionary-4769738" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Referencia</div>
+      <div class="recurso-name">Investopedia</div>
+      <div class="recurso-desc">Diccionario financiero y guías sobre instrumentos, estrategias y conceptos del mercado.</div>
+    </a>
+    <a href="https://pitchbook.com/news/articles" target="_blank" class="recurso-card">
+      <div class="recurso-cat">VC &amp; Private Equity</div>
+      <div class="recurso-name">PitchBook News</div>
+      <div class="recurso-desc">Tendencias en private equity, venture capital y M&A con datos y análisis del sector.</div>
+    </a>
+    <a href="https://www.coursera.org/courses?query=financial%20modeling" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Online Learning</div>
+      <div class="recurso-name">Coursera — Finance</div>
+      <div class="recurso-desc">Cursos gratuitos de universidades como Wharton, Columbia e IESE sobre finanzas y mercados.</div>
+    </a>
+    <a href="https://www.cfainstitute.org/en/research" target="_blank" class="recurso-card">
+      <div class="recurso-cat">Research &amp; CFA</div>
+      <div class="recurso-name">CFA Institute Research</div>
+      <div class="recurso-desc">Papers, informes y materiales de estudio del CFA Institute. Referencia para el sector.</div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="newsletter-wrap">
+    <div class="section-tag">Newsletter</div>
+    <h2 class="section-title">Club de Bolsa e Inversión | CUNEF</h2>
+    <p class="section-sub">Recibe cada semana un briefing con las noticias más importantes de los mercados y los próximos eventos del club.</p>
+
+    <div class="newsletter-form">
+      <input type="email" id="emailInput" class="newsletter-input" placeholder="tu@correo.cunef.edu">
+      <button class="newsletter-submit" onclick="subscribeNewsletter()">Suscribirme</button>
+    </div>
+    <div id="newsletter-msg" class="newsletter-note"></div>
+
+    <div class="newsletter-features">
+      <span class="newsletter-feature">Briefing semanal de mercados</span>
+      <span class="newsletter-feature">Agenda de eventos del club</span>
+      <span class="newsletter-feature">Sin spam, baja cuando quieras</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#">
+        <img class="brand-logo" src="assets/img/cunef-universidad-logo.png" alt="CUNEF Universidad">
+        <div class="footer-divider"></div>
+        <span class="footer-logo-name">Club de Bolsa e Inversión</span>
+      </a>
+      <div class="footer-brand-desc">El club de finanzas de CUNEF Universidad. Formamos a los próximos profesionales de los mercados financieros en Madrid.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Bases de datos</div>
+      <ul class="footer-links">
+        <li><a href="https://encuentra.cunef.edu/discovery/fulldisplay?context=L&vid=34CUNEF_INST:VU1&search_scope=MyInstitution&tab=LibraryCatalog&docid=alma991000191979708131" target="_blank">Bloomberg Terminal</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000208929708131" target="_blank">Capital IQ</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000542709608131" target="_blank">LSEG (Refinitiv)</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000558773908131" target="_blank">LSEG IBES</a></li>
+        <li><a href="https://login.cunef.idm.oclc.org/login?url=https://sabi.informa.es/ip" target="_blank">SABI</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Club</div>
+      <ul class="footer-links">
+        <li><a href="#mercado">Mercados</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">© 2026 Club de Bolsa e Inversión · CUNEF Universidad</div>
+    <div class="footer-bottom-text">Madrid, España</div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal1">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal1')">✕</button>
+    <div class="modal-cat">Charla · Marzo 2025</div>
+    <h2 class="modal-title">Macro global y posicionamiento de carteras: perspectivas para 2025</h2>
+    <div class="modal-meta">12 de marzo de 2025 · Aula Magna, CUNEF · 62 asistentes</div>
+    <div class="modal-body">
+      <p>Un economista jefe de una gestora de activos internacional compartió durante 90 minutos su visión macro para 2025, con foco en los efectos de la política monetaria de la Fed y el BCE sobre los distintos activos.</p>
+      <h3>El escenario base para 2025</h3>
+      <p>El ponente defendió un escenario de aterrizaje suave en EE.UU., con tipos en descenso gradual y un crecimiento del PIB por encima del consenso. En Europa, la situación es más compleja dado el menor dinamismo del sector industrial alemán.</p>
+      <h3>Posicionamiento en carteras multiactivo</h3>
+      <p>La segunda parte se centró en cómo reflejar ese escenario macro en una cartera real: sobreponderar renta variable americana sobre europea, favorecer el tramo corto de la curva de tipos, y mantener exposición a dólar frente a euro. Se debatió el papel del oro y las materias primas como cobertura ante riesgos de cola.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Macro</span>
+      <span class="archivo-tag">Asset Allocation</span>
+      <span class="archivo-tag">Tipos de interés</span>
+      <span class="archivo-tag">Renta variable</span>
+      <span class="archivo-tag">Divisas</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal2">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+    <div class="modal-cat">Workshop · Febrero 2025</div>
+    <h2 class="modal-title">Introducción a Bloomberg Terminal: funciones esenciales</h2>
+    <div class="modal-meta">5 de febrero de 2025 · Sala de Ordenadores, CUNEF · 34 asistentes</div>
+    <div class="modal-body">
+      <p>Workshop práctico en la sala de ordenadores de CUNEF, con acceso directo a los terminales Bloomberg de la biblioteca. Los participantes trabajaron con la herramienta en tiempo real durante casi dos horas.</p>
+      <h3>Funciones trabajadas</h3>
+      <p>Se cubrieron las funciones más utilizadas en entornos profesionales: EQS para screeners de renta variable, WACC y DCF para valoración, pantallas de renta fija con YAS y SRCH, y análisis de curvas de tipos con FWCM. También se practicó la búsqueda de comparables con COMP y la extracción de datos financieros históricos.</p>
+      <h3>Caso práctico</h3>
+      <p>Cada participante realizó un mini-análisis de una empresa cotizada española, extrayendo los datos fundamentales necesarios para construir un modelo de valoración básico.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Bloomberg</span>
+      <span class="archivo-tag">Terminal</span>
+      <span class="archivo-tag">DCF</span>
+      <span class="archivo-tag">Renta Fija</span>
+      <span class="archivo-tag">Screeners</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal3">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal3')">✕</button>
+    <div class="modal-cat">Competición · Enero 2025</div>
+    <h2 class="modal-title">Stock Pitch Competition — Edición Invierno 2025</h2>
+    <div class="modal-meta">28 de enero de 2025 · Aula Magna, CUNEF · 8 equipos</div>
+    <div class="modal-body">
+      <p>Ocho equipos de 2-3 estudiantes presentaron sus ideas de inversión ante un jurado compuesto por tres profesionales del sector financiero: un analista de renta variable de una gestora, un banquero de inversión y un gestor de hedge fund.</p>
+      <h3>El equipo ganador</h3>
+      <p>El primer puesto fue para el equipo que presentó una tesis de inversión sobre una empresa del sector industrial europeo cotizada en el STOXX 600. La propuesta incluía análisis de valoración por múltiplos, DCF y catalizadores específicos a 12 meses.</p>
+      <h3>Feedback del jurado</h3>
+      <p>El jurado destacó la calidad del análisis sectorial y la claridad de la presentación. Los principales puntos de mejora señalados fueron la profundidad del análisis de riesgos y la cuantificación de los catalizadores de valor.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Stock Pitch</span>
+      <span class="archivo-tag">Valoración</span>
+      <span class="archivo-tag">Competición</span>
+      <span class="archivo-tag">Renta Variable</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal4">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal4')">✕</button>
+    <div class="modal-cat">Workshop · Noviembre 2024</div>
+    <h2 class="modal-title">Comparables de mercado y precedent transactions en M&A</h2>
+    <div class="modal-meta">20 de noviembre de 2024 · Sala 2.01, CUNEF · 28 asistentes</div>
+    <div class="modal-body">
+      <p>En este workshop se trabajó con las dos metodologías de valoración relativa más utilizadas en M&A: los comparables de mercado (trading comps) y las transacciones precedentes (precedent transactions).</p>
+      <h3>Uso de Capital IQ y Bloomberg</h3>
+      <p>Se enseñó a los asistentes a extraer datos de empresas comparables usando la biblioteca de CUNEF. Con Capital IQ se construyó una tabla de comps de 8 empresas del sector retail europeo, calculando los múltiplos EV/EBITDA, EV/EBIT y P/E.</p>
+      <h3>Football field chart</h3>
+      <p>La parte final del taller se centró en cómo interpretar los rangos de valoración obtenidos y cómo presentarlos en un football field chart, herramienta estándar en los pitch books de banca de inversión.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">M&A</span>
+      <span class="archivo-tag">Comps</span>
+      <span class="archivo-tag">Capital IQ</span>
+      <span class="archivo-tag">Bloomberg</span>
+      <span class="archivo-tag">Valoración</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal5">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal5')">✕</button>
+    <div class="modal-cat">Visita · Octubre 2024</div>
+    <h2 class="modal-title">Visita a la sala de mercados de BBVA en Madrid</h2>
+    <div class="modal-meta">15 de octubre de 2024 · BBVA Ciudad BBVA, Madrid · 18 asistentes</div>
+    <div class="modal-body">
+      <p>Dieciocho miembros del club visitaron la sala de mercados de BBVA en su sede de Madrid. La visita fue organizada en colaboración con la unidad de talento del banco y duró aproximadamente tres horas.</p>
+      <h3>Sesión en la sala de trading</h3>
+      <p>Los asistentes pudieron ver de cerca el día a día de la sala de mercados: desde los traders de renta variable y renta fija hasta los equipos de estructuración y ventas. Varios traders explicaron brevemente las estrategias que siguen y cómo usan Bloomberg y LSEG.</p>
+      <h3>Q&A con los profesionales</h3>
+      <p>La jornada terminó con una sesión de preguntas y respuestas con cuatro profesionales de diferentes áreas: trading de bonos, equity derivatives, FX y structured products.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Visita</span>
+      <span class="archivo-tag">Trading</span>
+      <span class="archivo-tag">BBVA</span>
+      <span class="archivo-tag">Mercados</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal6">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal6')">✕</button>
+    <div class="modal-cat">Charla · Septiembre 2024</div>
+    <h2 class="modal-title">Introducción al private equity: proceso, deal flow y value creation</h2>
+    <div class="modal-meta">25 de septiembre de 2024 · Aula Magna, CUNEF · 55 asistentes</div>
+    <div class="modal-body">
+      <p>El ponente, asociado en un fondo de private equity con presencia en España y Portugal, explicó durante 90 minutos el funcionamiento del sector desde la perspectiva de alguien que trabaja en él.</p>
+      <h3>El ciclo de vida de una inversión</h3>
+      <p>Se repasaron las fases de una inversión en PE: sourcing y originación, due diligence, negociación y cierre, creación de valor durante el holding period y, finalmente, el exit — ya sea mediante venta a un strategic, secondary o salida a bolsa.</p>
+      <h3>El mercado español de PE</h3>
+      <p>Se analizó el estado actual del mercado de private equity en España, con datos sobre el volumen de operaciones en 2024, los sectores más activos y los fondos más relevantes con presencia local. El ponente también habló sobre cómo es el proceso de selección en fondos de PE y qué perfiles buscan.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Private Equity</span>
+      <span class="archivo-tag">Deal Flow</span>
+      <span class="archivo-tag">LBO</span>
+      <span class="archivo-tag">España</span>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal-overlay" id="modal7">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal7')">✕</button>
+    <div class="modal-cat">Evento · Abril 2026</div>
+    <h2 class="modal-title">I CUNEF Universidad Finance Superday</h2>
+    <div class="modal-meta">15 de abril de 2026 · Aula Magna, Campus Almansa · El mayor evento de finanzas del Club</div>
+    <div class="modal-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:1rem;"><img src="assets/img/image-02-ade0546b55.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-03-fcd47d1b5d.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-04-e5529820a3.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-05-7d26861c8a.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-06-1ff24b9664.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-07-51b433b97d.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-08-23dd1dd066.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-09-23b8c7ad6e.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-10-21d0bb8a63.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /></div>
+      <h3>El evento</h3>
+      <p>La primera edición del CUNEF Universidad Finance Superday reunió en el Aula Magna del Campus Almansa a profesionales de las principales firmas financieras globales para debatir con los estudiantes del Club de Bolsa.</p>
+      <h3>Paneles</h3>
+      <p><strong>Investment Banking (12:00–12:45) — "The Future of IB in the Age of AI"</strong><br>Con profesionales de Rothschild & Co, Jefferies y Nomura.</p>
+      <p><strong>Asset Management (13:00–13:45) — "What Is Driving Markets in 2026?"</strong><br>Con profesionales de BBVA, UBS, Deutsche Bank y CaixaBank.</p>
+      <p><strong>Alternative Investments (14:15–15:00) — "The Future of Private Equity and Funds"</strong><br>Con profesionales de Deutsche Bank, UBS y LIFT AM.</p>
+      <p><strong>Networking (12:00–16:00) — Aula D</strong><br>Espacio continuo de networking para conocer a analistas y profesionales de cada firma.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Investment Banking</span>
+      <span class="archivo-tag">Asset Management</span>
+      <span class="archivo-tag">Private Equity</span>
+      <span class="archivo-tag">Networking</span>
+      <span class="archivo-tag">Rothschild & Co</span>
+      <span class="archivo-tag">Jefferies</span>
+      <span class="archivo-tag">Nomura</span>
+      <span class="archivo-tag">UBS</span>
+      <span class="archivo-tag">Deutsche Bank</span>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal8">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal8')">✕</button>
+    <div class="modal-cat">Charla · 2026</div>
+    <h2 class="modal-title">Wealth Management con UBS Madrid</h2>
+    <div class="modal-meta">CUNEF Universidad · Pablo Carrasco y Jaime Hernández Tallada, UBS</div>
+    <div class="modal-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:1rem;"><img src="assets/img/image-11-b8c25f786a.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-12-54718eba96.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /><img src="assets/img/image-13-44cb81f7fb.png" style="width:100%;border-radius:6px;object-fit:cover;max-height:280px;" /></div>
+      <h3>La sesión</h3>
+      <p>Pablo Carrasco y Jaime Hernández Tallada de UBS Wealth Management en Madrid visitaron CUNEF para presentar a los estudiantes del Club las claves de la gestión patrimonial: desde el modelo de negocio de UBS hasta las estrategias de inversión y el perfil del cliente de banca privada.</p>
+      <p>La sesión combinó una presentación institucional con un espacio de preguntas y respuestas donde los asistentes pudieron explorar oportunidades de carrera en Wealth Management.</p>
+    </div>
+    <div class="modal-tags">
+      <span class="archivo-tag">Wealth Management</span>
+      <span class="archivo-tag">UBS</span>
+      <span class="archivo-tag">Banca Privada</span>
+      <span class="archivo-tag">Patrimonio</span>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="networkModal">
+  <div class="modal" style="max-width: 650px;">
+    <button class="modal-close" onclick="closeModal('networkModal')">✕</button>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+      <div style="flex: 1 1 200px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px; padding: 2rem;">
+        <img id="nm-logo" src="" alt="Logo" style="max-width: 100%; max-height: 100px; object-fit: contain;">
+      </div>
+      <div style="flex: 1 1 250px; display: flex; flex-direction: column; justify-content: center;">
+        <h2 id="nm-name" style="margin-top: 0; font-size: 1.6rem; margin-bottom: 1rem;">Company</h2>
+        <a id="nm-careers" href="#" target="_blank" class="btn-primary" style="align-self: flex-start; margin-bottom: 2rem;">Ver posiciones abiertas ↗</a>
+        
+        <h3 style="font-size: 1rem; color: #666; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem;">Nuestra Red</h3>
+        <ul id="nm-people" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+          <!-- JS injects here -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openNetworkModal(el) {
+  const company = el.getAttribute('data-company');
+  const logo = el.getAttribute('data-logo');
+  const careers = el.getAttribute('data-careers');
+  const peopleStr = el.getAttribute('data-people');
+  const scale = el.getAttribute('data-scale') || "1";
+  const invert = el.getAttribute('data-invert');
+  
+  document.getElementById('nm-name').textContent = company;
+  
+  const nmLogo = document.getElementById('nm-logo');
+  nmLogo.src = logo;
+  nmLogo.style.transform = `scale(${scale})`;
+  
+  if (invert === "true") {
+    nmLogo.style.filter = "invert(1)";
+  } else {
+    nmLogo.style.filter = "none";
+  }
+  
+  document.getElementById('nm-careers').href = careers;
+  
+  const peopleList = document.getElementById('nm-people');
+  peopleList.innerHTML = '';
+  
+  if (peopleStr) {
+    const people = JSON.parse(peopleStr);
+    if (people.length > 0) {
+      people.forEach(p => {
+        const li = document.createElement('li');
+        // Usamos posición actual en vez de nombre si está disponible
+        const roleHtml = p.role ? `<span style="display:block; font-size:0.85em; color:#666; font-weight:400; margin-left: 26px;">${p.role}</span>` : '';
+        li.innerHTML = `<a href="${p.linkedin}" target="_blank" style="display: flex; flex-direction: column; color: #0F0F0F; text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.2s; padding: 4px 0;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> 
+            ${p.name}
+          </div>
+          ${roleHtml}
+        </a>`;
+        peopleList.appendChild(li);
+      });
+    } else {
+      peopleList.innerHTML = '<li style="color: #888; font-style: italic; font-size: 0.95rem;">Todavía no hay representantes públicos.</li>';
+    }
+  }
+  
+  // Utilizar la función openModal existente
+  if (typeof openModal === 'function') {
+    openModal('networkModal');
+  } else {
+    document.getElementById('networkModal').classList.add('active'); // Fallback in case main.js handles it differently
+  }
+}
+</script>
+</body>
+</html>
+
+
+

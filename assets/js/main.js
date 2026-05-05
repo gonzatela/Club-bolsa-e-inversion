@@ -1,0 +1,353 @@
+// MODALS
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', function(e) {
+    if (e.target === this) closeModal(this.id);
+  });
+});
+
+// MOBILE NAV
+const nav = document.querySelector('nav');
+const navToggle = document.querySelector('.nav-menu-toggle');
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+    });
+  });
+}
+
+// NEWSLETTER
+function subscribeNewsletter() {
+  const email = document.getElementById('emailInput').value;
+  const msg = document.getElementById('newsletter-msg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Por favor, introduce un correo válido.';
+    msg.style.color = '#c0392b';
+    return;
+  }
+  msg.textContent = '✓ ¡Gracias! Te hemos apuntado a la newsletter.';
+  msg.style.color = '#2a7a4a';
+  document.getElementById('emailInput').value = '';
+}
+
+// EXPLORAR
+const exploreItems = [
+  // ── PRÓXIMOS EVENTOS ──
+  {
+    type: 'evento',
+    label: 'Próximo evento',
+    title: 'Renta fija en el nuevo ciclo de tipos',
+    desc: 'Charla sobre estrategias de bonos y posicionamiento de carteras en el actual entorno macroeconómico.',
+    meta: '15 May · Aula Magna',
+    href: 'index.html#eventos'
+  },
+  {
+    type: 'evento',
+    label: 'Próximo evento',
+    title: 'Construcción de un LBO model en Excel',
+    desc: 'Workshop práctico para construir un modelo LBO completo usando datos de Capital IQ.',
+    meta: '22 May · Sala 2.01',
+    href: 'index.html#eventos'
+  },
+  // ── EVENTOS PASADOS (más reciente primero) ──
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'I CUNEF Universidad Finance Superday',
+    desc: 'Paneles de investment banking, asset management y alternativos con profesionales de firmas globales.',
+    meta: 'Abril 2026',
+    href: 'explorar.html',
+    modal: 'modal7'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Wealth Management con UBS Madrid',
+    desc: 'Sesión con Pablo Carrasco y Jaime Hernández Tallada sobre gestión patrimonial y carreras en wealth management.',
+    meta: '2026 · UBS Madrid',
+    href: 'explorar.html',
+    modal: 'modal8'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Macro global y posicionamiento de carteras',
+    desc: 'Charla sobre escenario macro para 2025 y posicionamiento en renta fija, renta variable y divisas.',
+    meta: 'Marzo 2025 · 62 asistentes',
+    href: 'explorar.html',
+    modal: 'modal1'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Introducción a Bloomberg Terminal',
+    desc: 'Workshop práctico sobre EQS, WACC, DCF, renta fija y extracción de datos financieros históricos.',
+    meta: 'Febrero 2025',
+    href: 'explorar.html',
+    modal: 'modal2'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Stock Pitch Competition — Edición Invierno 2025',
+    desc: 'Ocho equipos presentaron tesis de inversión ante un jurado de profesionales del sector financiero.',
+    meta: 'Enero 2025 · 8 equipos',
+    href: 'explorar.html',
+    modal: 'modal3'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Comparables de mercado y precedent transactions',
+    desc: 'Workshop sobre trading comps, precedent transactions y construcción de tablas de comparables con Capital IQ y Bloomberg.',
+    meta: 'Noviembre 2024 · M&A',
+    href: 'explorar.html',
+    modal: 'modal4'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Visita a la sala de mercados de BBVA',
+    desc: 'Visita a la trading room de BBVA con Q&A con profesionales de renta variable, FX y productos estructurados.',
+    meta: 'Octubre 2024 · BBVA',
+    href: 'explorar.html',
+    modal: 'modal5'
+  },
+  {
+    type: 'evento',
+    label: 'Evento pasado',
+    title: 'Introducción al private equity',
+    desc: 'Charla sobre sourcing, due diligence, negociación, value creation y salidas profesionales en private equity.',
+    meta: 'Septiembre 2024 · Private Equity',
+    href: 'explorar.html',
+    modal: 'modal6'
+  },
+  // ── NEWSLETTER ──
+  {
+    type: 'newsletter',
+    label: 'Newsletter semanal',
+    title: 'Briefing semanal de mercados',
+    desc: 'Resumen de macro, renta variable, divisas, crédito y eventos del club para estudiantes de CUNEF.',
+    meta: 'Cada semana',
+    href: 'index.html#newsletter'
+  },
+  // ── ARTÍCULOS ──
+  {
+    type: 'articulo',
+    label: 'Artículo',
+    title: 'Cómo empezar con Bloomberg Terminal',
+    desc: 'Funciones esenciales para buscar compañías, crear screeners, consultar WACC y extraer datos financieros.',
+    meta: 'Biblioteca CUNEF',
+    href: 'index.html#biblioteca'
+  },
+  {
+    type: 'articulo',
+    label: 'Artículo',
+    title: 'Guía rápida de comparables en M&A',
+    desc: 'Qué múltiplos usar, cómo elegir peer group y cómo interpretar un football field chart.',
+    meta: 'M&A y valoración',
+    href: 'explorar.html'
+  },
+  // ── RECURSOS TÉCNICOS GRATUITOS ──
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Wall Street Prep',
+    desc: 'Tutoriales gratuitos sobre financial modeling, valuation y Excel usados en banca de inversión.',
+    meta: 'Modeling & Valuation',
+    href: 'https://www.wallstreetprep.com/free-resources/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'CFI Free Guides',
+    desc: 'Guías prácticas y plantillas sobre contabilidad, finanzas corporativas y análisis financiero.',
+    meta: 'Finanzas corporativas',
+    href: 'https://corporatefinanceinstitute.com/resources/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Damodaran Online',
+    desc: 'Datasets, plantillas y materiales de valoración de Stern NYU.',
+    meta: 'Valoración',
+    href: 'https://aswathdamodaran.blogspot.com/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Mergers & Inquisitions',
+    desc: 'Guías detalladas sobre procesos de selección en banca de inversión, private equity y hedge funds.',
+    meta: 'Carreras & Procesos',
+    href: 'https://mergersandinquisitions.com/articles/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Breaking Into Wall Street',
+    desc: 'Recursos gratuitos de modeling, LBO y análisis. Casos prácticos y plantillas de Excel.',
+    meta: 'Banca de Inversión',
+    href: 'https://breakingintowallstreet.com/resources/'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Investopedia',
+    desc: 'Diccionario financiero y guías sobre instrumentos, estrategias y conceptos del mercado.',
+    meta: 'Referencia',
+    href: 'https://www.investopedia.com/financial-term-dictionary-4769738'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'PitchBook News',
+    desc: 'Tendencias en private equity, venture capital y M&A con datos y análisis del sector.',
+    meta: 'VC & Private Equity',
+    href: 'https://pitchbook.com/news/articles'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'Coursera — Finance',
+    desc: 'Cursos gratuitos de universidades como Wharton, Columbia e IESE sobre finanzas y mercados.',
+    meta: 'Online Learning',
+    href: 'https://www.coursera.org/courses?query=financial%20modeling'
+  },
+  {
+    type: 'recurso',
+    label: 'Recurso',
+    title: 'CFA Institute Research',
+    desc: 'Papers, informes y materiales de estudio del CFA Institute. Referencia para el sector.',
+    meta: 'Research & CFA',
+    href: 'https://www.cfainstitute.org/en/research'
+  },
+  // ── BASES DE DATOS PROFESIONALES ──
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
+    title: 'Bloomberg Terminal',
+    desc: 'La plataforma de referencia global en datos financieros, análisis de mercados, fixed income, renta variable, derivados y economía macro.',
+    meta: 'Acceso vía Biblioteca CUNEF',
+    href: 'https://encuentra.cunef.edu/discovery/fulldisplay?context=L&vid=34CUNEF_INST:VU1&search_scope=MyInstitution&tab=LibraryCatalog&docid=alma991000191979708131'
+  },
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
+    title: 'Capital IQ',
+    desc: 'Plataforma de S&P Global con datos de empresas, transacciones de M&A, financiación y análisis de crédito. Muy usada en private equity y banca de inversión.',
+    meta: 'Acceso vía Biblioteca CUNEF',
+    href: 'https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000208929708131'
+  },
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
+    title: 'LSEG (Refinitiv)',
+    desc: 'London Stock Exchange Group ofrece datos de mercados globales, análisis de derivados y herramientas de trading profesional.',
+    meta: 'Acceso vía Biblioteca CUNEF',
+    href: 'https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000542709608131'
+  },
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
+    title: 'LSEG IBES Guidance',
+    desc: 'Base de datos de estimaciones de analistas y guidance de empresas. Fundamental para análisis de renta variable y modelos de valoración.',
+    meta: 'Acceso vía Biblioteca CUNEF',
+    href: 'https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000558773908131'
+  },
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
+    title: 'SABI',
+    desc: 'Información financiera de empresas españolas y portuguesas. Cuentas anuales, balances y datos sectoriales de más de 2,5 millones de compañías.',
+    meta: 'Acceso vía CUNEF SSO',
+    href: 'https://login.cunef.idm.oclc.org/login?url=https://sabi.informa.es/ip'
+  },
+];
+let activeExploreFilter = 'todos';
+
+function renderExplore() {
+  const grid = document.getElementById('explorarGrid');
+  const search = document.getElementById('explorarSearch');
+  const count = document.getElementById('explorarCount');
+  const empty = document.getElementById('explorarEmpty');
+  if (!grid || !search || !count || !empty) return;
+
+  const query = search.value.trim().toLowerCase();
+  const results = exploreItems.filter(item => {
+    const matchesFilter = activeExploreFilter === 'todos' || item.type === activeExploreFilter;
+    const text = `${item.label} ${item.title} ${item.desc} ${item.meta}`.toLowerCase();
+    return matchesFilter && (!query || text.includes(query));
+  });
+
+  grid.innerHTML = results.map(item => {
+    const canOpenModal = item.modal && document.getElementById(item.modal);
+    const action = canOpenModal
+      ? `<button class="explorar-link" type="button" onclick="openModal('${item.modal}')" style="border:0;background:transparent;padding:0;cursor:pointer;font-family:'Inter',sans-serif;">Ver detalle</button>`
+      : `<a class="explorar-link" href="${item.href}" ${item.href.startsWith('http') ? 'target="_blank"' : ''}>Abrir →</a>`;
+    return `<article class="explorar-card">
+      <div class="explorar-type">${item.label}</div>
+      <h3 class="explorar-title">${item.title}</h3>
+      <p class="explorar-desc">${item.desc}</p>
+      <div class="explorar-meta">
+        <span>${item.meta}</span>
+        ${action}
+      </div>
+    </article>`;
+  }).join('');
+
+  count.textContent = `${results.length} contenidos encontrados`;
+  empty.style.display = results.length ? 'none' : 'block';
+
+  // Re-attach fade-in observer to newly rendered cards
+  grid.querySelectorAll('.explorar-card').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+}
+
+function toggleExploreFilters() {
+  const filters = document.getElementById('explorarFilters');
+  if (filters) filters.classList.toggle('active');
+}
+
+// SCROLL FADE IN (must be before renderExplore so cards can use it)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    activeExploreFilter = chip.dataset.filter;
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    renderExplore();
+  });
+});
+const exploreSearch = document.getElementById('explorarSearch');
+if (exploreSearch) exploreSearch.addEventListener('input', renderExplore);
+renderExplore();
+
+// Observe static cards on index.html
+document.querySelectorAll('.market-widget-card, .db-card, .recurso-card, .evento-card').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+
+
+

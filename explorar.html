@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorar | Club de Bolsa e Inversión CUNEF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img class="brand-logo" src="assets/img/cunef-universidad-logo.png" alt="CUNEF Universidad">
+    <div class="nav-divider"></div>
+    <span class="nav-club-name">Club de Bolsa e Inversión</span>
+  </a>
+  <button class="nav-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#noticias">Noticias</a></li>
+    <li><a href="index.html#eventos">Eventos</a></li>
+    <li><a href="index.html#recursos">Recursos</a></li>
+    <li><a href="index.html#newsletter">Newsletter</a></li>
+    <li><a href="explorar.html" class="nav-cta" aria-current="page">Explorar</a></li>
+  </ul>
+</nav>
+
+<div class="ticker-bar">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        { "description": "IBEX 35", "proName": "BME:IBC" },
+        { "description": "S&P 500", "proName": "FOREXCOM:SPXUSD" },
+        { "description": "NASDAQ 100", "proName": "FOREXCOM:NSXUSD" },
+        { "description": "Euro Stoxx 50", "proName": "OANDA:EU50EUR" },
+        { "description": "EUR/USD", "proName": "FX_IDC:EURUSD" },
+        { "description": "Oro", "proName": "OANDA:XAUUSD" },
+        { "description": "Brent", "proName": "TVC:UKOIL" },
+        { "description": "Bitcoin", "proName": "BITSTAMP:BTCUSD" },
+        { "description": "DAX", "proName": "XETR:DAX" },
+        { "description": "Bono España 10Y", "proName": "EUREX:FBTS1!" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "light",
+      "isTransparent": true,
+      "displayMode": "regular",
+      "locale": "es"
+    }
+    </script>
+  </div>
+</div>
+
+<main class="page-main">
+  <section id="explorar" class="explorar-page">
+    <div class="section-tag">Explorar</div>
+    <h1 class="section-title">Todo el contenido del club</h1>
+    <p class="section-sub">Busca recursos, artículos, newsletters semanales, eventos pasados y próximos eventos desde una única vista.</p>
+
+    <div class="explorar-toolbar">
+      <input type="search" id="explorarSearch" class="explorar-search" placeholder="Buscar por tema, empresa, evento o recurso">
+      <button class="filter-toggle" type="button" onclick="toggleExploreFilters()">Filtrar</button>
+    </div>
+    <div class="explorar-filters active" id="explorarFilters">
+      <button class="filter-chip active" type="button" data-filter="todos">Todos</button>
+      <button class="filter-chip" type="button" data-filter="articulo">Artículos</button>
+      <button class="filter-chip" type="button" data-filter="newsletter">Newsletter semanal</button>
+      <button class="filter-chip" type="button" data-filter="evento">Eventos</button>
+      <button class="filter-chip" type="button" data-filter="recurso">Recursos</button>
+      <button class="filter-chip" type="button" data-filter="base-datos">Bases de datos</button>
+    </div>
+    <div class="explorar-count" id="explorarCount"></div>
+    <div class="explorar-grid" id="explorarGrid"></div>
+    <div class="explorar-empty" id="explorarEmpty">No hay resultados para esa búsqueda.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img class="brand-logo" src="assets/img/cunef-universidad-logo.png" alt="CUNEF Universidad">
+        <div class="footer-divider"></div>
+        <span class="footer-logo-name">Club de Bolsa e Inversión</span>
+      </a>
+      <div class="footer-brand-desc">El club de finanzas de CUNEF Universidad. Formamos a los próximos profesionales de los mercados financieros en Madrid.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Bases de datos</div>
+      <ul class="footer-links">
+        <li><a href="https://encuentra.cunef.edu/discovery/fulldisplay?context=L&vid=34CUNEF_INST:VU1&search_scope=MyInstitution&tab=LibraryCatalog&docid=alma991000191979708131" target="_blank">Bloomberg Terminal</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000208929708131" target="_blank">Capital IQ</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000542709608131" target="_blank">LSEG (Refinitiv)</a></li>
+        <li><a href="https://encuentra.cunef.edu/permalink/34CUNEF_INST/tmg4lg/alma991000558773908131" target="_blank">LSEG IBES</a></li>
+        <li><a href="https://login.cunef.idm.oclc.org/login?url=https://sabi.informa.es/ip" target="_blank">SABI</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Club</div>
+      <ul class="footer-links">
+        <li><a href="index.html#mercado">Mercados</a></li>
+        <li><a href="index.html#noticias">Noticias</a></li>
+        <li><a href="index.html#eventos">Eventos</a></li>
+        <li><a href="index.html#recursos">Recursos</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="index.html#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">© 2026 Club de Bolsa e Inversión · CUNEF Universidad</div>
+    <div class="footer-bottom-text">Madrid, España</div>
+  </div>
+</footer>
+
+</body>
+</html>
