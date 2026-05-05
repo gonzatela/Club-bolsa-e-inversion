@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.className = 'cookie-banner';
     banner.innerHTML = `
       <div class="cookie-text">
-        Utilizamos cookies para mejorar tu experiencia en nuestra web. Puedes aceptar todas las cookies, solo las necesarias, o denegarlas.
+        Utilizamos cookies para mejorar tu experiencia en nuestra web. Puedes aceptar todas las cookies, solo las necesarias, o denegarlas. Lee más en nuestra <a href="https://www.cunef.edu/politica-de-cookies/" target="_blank" rel="noopener" style="color: var(--orange); text-decoration: underline; font-weight: 500;">política de cookies</a>.
       </div>
       <div class="cookie-actions">
         <button class="cookie-btn cookie-btn-primary" id="acceptAllCookies">Aceptar todas</button>
