@@ -265,6 +265,14 @@ const exploreItems = [
   {
     type: 'base-datos',
     label: 'Base de datos',
+    title: 'Wharton Research Data Services (WRDS)',
+    desc: 'Plataforma de investigación financiera de Wharton con datasets profesionales para mercados, compañías y research académico.',
+    meta: 'Acceso vía Biblioteca CUNEF',
+    href: 'https://encuentra.cunef.edu/discovery/fulldisplay?context=L&vid=34CUNEF_INST:VU1&search_scope=MyInstitution&tab=LibraryCatalog&docid=alma991000544209308131'
+  },
+  {
+    type: 'base-datos',
+    label: 'Base de datos',
     title: 'LSEG (Refinitiv)',
     desc: 'London Stock Exchange Group ofrece datos de mercados globales, análisis de derivados y herramientas de trading profesional.',
     meta: 'Acceso vía Biblioteca CUNEF',
@@ -308,7 +316,7 @@ function getExploreSector(item) {
   if (title.includes('bloomberg') || title.includes('trading') || title.includes('lseg') || title.includes('investopedia') || meta.includes('trading')) {
     return { key: 'trading', label: exploreSectorLabels.trading };
   }
-  if (title.includes('macro') || title.includes('cfa') || title.includes('ibes') || title.includes('damodaran') || meta.includes('research')) {
+  if (title.includes('macro') || title.includes('cfa') || title.includes('ibes') || title.includes('damodaran') || title.includes('wrds') || title.includes('wharton') || meta.includes('research')) {
     return { key: 'macro-research', label: exploreSectorLabels['macro-research'] };
   }
   if (title.includes('renta fija') || title.includes('wealth management') || title.includes('coursera') || meta.includes('asset')) {
