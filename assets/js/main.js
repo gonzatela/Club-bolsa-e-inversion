@@ -209,8 +209,8 @@ const exploreItems = [
     type: 'recurso',
     label: 'Recurso',
     title: 'Street of Walls',
-    desc: 'Cursos gratuitos de investment banking, valuation, DCF, comps, precedent transactions, LBO y M&A.',
-    meta: 'Investment Banking',
+    desc: 'Cursos gratuitos de finance training: entrevistas de investment banking, valuation, modeling, private equity, hedge funds, quant y consulting.',
+    meta: 'Finance Training',
     href: 'https://www.streetofwalls.com/finance-training-courses/'
   },
   {
