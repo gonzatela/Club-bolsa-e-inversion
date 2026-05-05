@@ -1,8 +1,13 @@
 :root {
-  --orange: #E85A1A;
-  --orange-light: #F07340;
-  --orange-pale: #FDF0EA;
-  --orange-border: rgba(232, 90, 26, 0.15);
+  --orange: #ff5700;
+  --orange-light: #ff7a33;
+  --orange-pale: #fff4ef;
+  --orange-border: rgba(255, 87, 0, 0.15);
+  --blue: #1a1f6c;
+  --blue-dark: #12164d;
+  --blue-pale: #f2f3f9;
+  --beige: #d6d1c4;
+  --beige-light: #f5f4f1;
   --black: #111111;
   --gray-900: #1a1a1a;
   --gray-700: #444444;
@@ -308,7 +313,7 @@ nav.nav-open .nav-menu-toggle span:nth-child(3) {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  color: var(--black);
+  color: var(--blue);
   line-height: 1.25;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
@@ -494,7 +499,7 @@ section {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(1.7rem, 2.5vw, 2.4rem);
   font-weight: 700;
-  color: var(--black);
+  color: var(--blue);
   margin-bottom: 0.5rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -511,7 +516,7 @@ section {
 
 /* ── JOIN CTA ── */
 .join-section {
-  background: var(--gray-50);
+  background: var(--beige-light);
   border-bottom: 1px solid var(--border);
 }
 
@@ -781,7 +786,7 @@ section {
 
 /* ── BIBLIOTECA ── */
 #biblioteca {
-  background: var(--gray-50);
+  background: var(--beige-light);
   border-bottom: 1px solid var(--border);
 }
 
@@ -810,7 +815,7 @@ section {
 }
 
 .db-card.featured {
-  border-color: rgba(232, 90, 26, 0.25);
+  border-color: rgba(255, 87, 0, 0.25);
   background: var(--orange-pale);
 }
 
@@ -871,7 +876,7 @@ section {
 }
 
 .db-card.featured .db-tag {
-  background: rgba(232, 90, 26, 0.1);
+  background: rgba(255, 87, 0, 0.1);
   color: var(--orange);
 }
 
@@ -884,7 +889,7 @@ section {
 }
 
 .db-card.featured .db-card-footer {
-  border-top-color: rgba(232, 90, 26, 0.15);
+  border-top-color: rgba(255, 87, 0, 0.15);
 }
 
 .db-access {
@@ -957,7 +962,7 @@ section {
 
 /* ── EVENTOS ── */
 #eventos {
-  background: var(--gray-50);
+  background: var(--beige-light);
   border-bottom: 1px solid var(--border);
 }
 
@@ -1370,7 +1375,7 @@ section {
 .explorar-search:focus {
   border-color: var(--orange-border);
   background: var(--white);
-  box-shadow: 0 0 0 3px rgba(232, 90, 26, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 87, 0, 0.08);
 }
 
 .explorar-filters-container {
@@ -1734,9 +1739,31 @@ section {
 
 /* ── FOOTER ── */
 footer {
-  background: var(--white);
+  background: var(--blue);
+  color: var(--white);
   padding: 3rem 6rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo-name, .footer-brand-desc, .footer-col-title, .footer-links a, .footer-bottom-text, .footer-bottom-links a {
+  color: rgba(255,255,255,0.8) !important;
+}
+.footer-links a:hover, .footer-bottom-links a:hover {
+  color: var(--white) !important;
+}
+.footer-divider {
+  background: rgba(255,255,255,0.2);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.social-icon-link {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: var(--white) !important;
+}
+.social-icon-link:hover {
+  background: var(--orange);
+  border-color: var(--orange);
 }
 
 .footer-grid {
@@ -2690,7 +2717,7 @@ footer {
 }
 
 .cookie-btn-secondary:hover {
-  background: rgba(232, 90, 26, 0.15);
+  background: rgba(255, 87, 0, 0.15);
   transform: translateY(-1px);
 }
 
