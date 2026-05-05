@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="760" viewBox="0 0 640 760" role="img" aria-labelledby="title desc">
+  <title id="title">Paula Esteban</title>
+  <desc id="desc">Placeholder de retrato para Paula Esteban</desc>
+  <rect width="640" height="760" fill="#fdf0ea"/>
+  <circle cx="320" cy="260" r="118" fill="#e85a1a" opacity="0.16"/>
+  <circle cx="320" cy="240" r="82" fill="#ffffff"/>
+  <path d="M170 638c22-112 90-174 150-174s128 62 150 174" fill="#ffffff"/>
+  <rect x="86" y="612" width="468" height="86" rx="18" fill="#ffffff" opacity="0.92"/>
+  <text x="320" y="344" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="700" fill="#e85a1a">PE</text>
+  <text x="320" y="662" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3" fill="#111111">PAULA ESTEBAN</text>
+</svg>

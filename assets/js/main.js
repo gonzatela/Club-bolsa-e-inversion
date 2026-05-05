@@ -280,6 +280,34 @@ const exploreItems = [
   },
 ];
 let activeExploreFilter = 'todos';
+let activeExploreSector = 'todos';
+
+const exploreSectorLabels = {
+  'todos': 'Todos',
+  'investment-banking': 'Investment Banking',
+  'asset-management': 'Asset Management',
+  'private-equity': 'Private Equity',
+  'trading': 'Trading',
+  'macro-research': 'Macro & Research'
+};
+
+function getExploreSector(item) {
+  const title = item.title.toLowerCase();
+  const meta = item.meta.toLowerCase();
+  if (title.includes('private equity') || title.includes('pitchbook') || title.includes('lbo') || meta.includes('private equity')) {
+    return { key: 'private-equity', label: exploreSectorLabels['private-equity'] };
+  }
+  if (title.includes('bloomberg') || title.includes('trading') || title.includes('lseg') || title.includes('investopedia') || meta.includes('trading')) {
+    return { key: 'trading', label: exploreSectorLabels.trading };
+  }
+  if (title.includes('macro') || title.includes('cfa') || title.includes('ibes') || title.includes('damodaran') || meta.includes('research')) {
+    return { key: 'macro-research', label: exploreSectorLabels['macro-research'] };
+  }
+  if (title.includes('renta fija') || title.includes('wealth management') || title.includes('coursera') || meta.includes('asset')) {
+    return { key: 'asset-management', label: exploreSectorLabels['asset-management'] };
+  }
+  return { key: 'investment-banking', label: exploreSectorLabels['investment-banking'] };
+}
 
 function renderExplore() {
   const grid = document.getElementById('explorarGrid');
@@ -290,12 +318,15 @@ function renderExplore() {
 
   const query = search.value.trim().toLowerCase();
   const results = exploreItems.filter(item => {
+    const sector = getExploreSector(item);
     const matchesFilter = activeExploreFilter === 'todos' || item.type === activeExploreFilter;
-    const text = `${item.label} ${item.title} ${item.desc} ${item.meta}`.toLowerCase();
-    return matchesFilter && (!query || text.includes(query));
+    const matchesSector = activeExploreSector === 'todos' || sector.key === activeExploreSector;
+    const text = `${item.label} ${item.title} ${item.desc} ${item.meta} ${sector.label}`.toLowerCase();
+    return matchesFilter && matchesSector && (!query || text.includes(query));
   });
 
   grid.innerHTML = results.map(item => {
+    const sector = getExploreSector(item);
     const canOpenModal = item.modal && document.getElementById(item.modal);
     const action = canOpenModal
       ? `<button class="explorar-link" type="button" onclick="openModal('${item.modal}')" style="border:0;background:transparent;padding:0;cursor:pointer;font-family:'Inter',sans-serif;">Ver detalle</button>`
@@ -305,7 +336,7 @@ function renderExplore() {
       <h3 class="explorar-title">${item.title}</h3>
       <p class="explorar-desc">${item.desc}</p>
       <div class="explorar-meta">
-        <span>${item.meta}</span>
+        <span>${item.meta} · ${sector.label}</span>
         ${action}
       </div>
     </article>`;
@@ -331,10 +362,18 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.filter-chip').forEach(chip => {
+document.querySelectorAll('.filter-chip[data-filter]').forEach(chip => {
   chip.addEventListener('click', () => {
     activeExploreFilter = chip.dataset.filter;
-    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.filter-chip[data-filter]').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    renderExplore();
+  });
+});
+document.querySelectorAll('.filter-chip[data-sector]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    activeExploreSector = chip.dataset.sector;
+    document.querySelectorAll('.filter-chip[data-sector]').forEach(c => c.classList.remove('active'));
     chip.classList.add('active');
     renderExplore();
   });
@@ -344,7 +383,7 @@ if (exploreSearch) exploreSearch.addEventListener('input', renderExplore);
 renderExplore();
 
 // Observe static cards on index.html
-document.querySelectorAll('.market-widget-card, .db-card, .recurso-card, .evento-card').forEach(el => {
+document.querySelectorAll('.market-widget-card, .db-card, .recurso-card, .evento-card, .testimonial-card, .team-card, .join-panel, .newsletter-edition-card').forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
 });
