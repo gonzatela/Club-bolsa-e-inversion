@@ -104,6 +104,21 @@
     transition: background 0.2s !important;
   }
   .nav-cta:hover { background: var(--orange-light) !important; color: var(--white) !important; }
+  
+  /* Distinct style for independent pages in nav */
+  .nav-page-link {
+    background-color: var(--gray-50);
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+  }
+  .nav-page-link:hover {
+    background-color: var(--white);
+    border-color: var(--gray-300);
+    box-shadow: var(--shadow-sm);
+    color: var(--orange) !important;
+  }
   .nav-icon-link,
   .social-icon-link {
     width: 34px;
