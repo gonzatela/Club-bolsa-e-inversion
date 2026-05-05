@@ -398,9 +398,12 @@ function renderExplore() {
   });
 }
 
-function toggleExploreFilters() {
-  const filters = document.getElementById('explorarFilters');
-  if (filters) filters.classList.toggle('active');
+function toggleFilterGroup(type) {
+  const group = type === 'type' ? 'filterGroupType' : 'filterGroupSector';
+  const el = document.getElementById(group);
+  const btn = el.previousElementSibling; // The mobile label button
+  if (el) el.classList.toggle('active');
+  if (btn) btn.classList.toggle('active');
 }
 
 // SCROLL FADE IN (must be before renderExplore so cards can use it)
